@@ -1,6 +1,16 @@
-# Browser Use Setup Guide
+# Browser Use AI Assistant
 
-This repository contains examples and setup for [browser-use](https://github.com/browser-use/browser-use), an AI-powered browser automation framework.
+**An AI-powered browser automation framework with multi-provider support and modern web interface.**
+
+This repository contains a comprehensive setup for [browser-use](https://github.com/browser-use/browser-use) with a beautiful chat-based frontend, supporting multiple AI providers including OpenAI, Anthropic, Google, and OpenRouter.
+
+## ✨ Features
+
+- 🤖 **Modern Chat Interface** - ChatGPT-style web UI for browser automation
+- 🔧 **Multi-Provider Support** - OpenAI, Anthropic, Google, OpenRouter
+- ⚙️ **Easy Configuration** - Web-based API key management
+- 🌐 **Browser Automation** - Powered by browser-use framework
+- 🔒 **Security First** - Secure API key handling and input validation
 
 ## 🚀 Quick Start
 
@@ -34,61 +44,62 @@ Install Playwright browsers (this may take a few minutes):
 playwright install chromium --with-deps --no-shell
 ```
 
-### 4. Configure API Keys
+### 4. Start the Web Interface
 
-1. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
+Launch the modern chat interface:
 
-2. Edit `.env` and add your API key:
-   ```bash
-   # Required for OpenAI
-   OPENAI_API_KEY=your_actual_openai_api_key_here
-   
-   # Optional for other LLMs
-   ANTHROPIC_API_KEY=your_anthropic_key_here
-   GOOGLE_API_KEY=your_google_key_here
-   
-   # Browser-use settings
-   BROWSER_USE_LOGGING_LEVEL=debug
-   ANONYMIZED_TELEMETRY=false
-   ```
-
-### 5. Run Examples
-
-#### Simple Example
 ```bash
-python simple_browser_use.py
+python run_ui.py
 ```
 
-#### Advanced Examples
-```bash
-python advanced_browser_use.py
+Then open your browser to: `http://localhost:8501`
+
+### 5. Configure API Keys
+
+In the web interface sidebar:
+1. Click "Configure API Keys" 
+2. Add your API keys for desired providers
+3. Click "Save API Keys"
+
+## 🎯 Web Interface Features
+
+### Chat-Based Automation
+- Type natural language commands
+- Real-time task execution
+- Chat history with timestamps
+- Example tasks for quick start
+
+### Multi-Provider Configuration
+- **OpenAI**: GPT-4o, GPT-4o-mini, GPT-4-turbo
+- **Anthropic**: Claude-3.5-Sonnet, Claude-3.5-Haiku
+- **Google**: Gemini-1.5-Pro, Gemini-Flash
+- **OpenRouter**: 200+ models including Llama, Mistral
+
+### Example Tasks
+```
+Go to Google and search for 'latest AI news'
+Visit GitHub and find trending Python repositories
+Go to weather.com and tell me the weather in New York
 ```
 
 ## 📁 Files Overview
 
-### `simple_browser_use.py`
-A basic example that demonstrates:
-- Setting up an OpenAI LLM
-- Creating a browser agent
-- Running a simple web search task
-- Error handling and setup validation
+### `browser_use_ui.py`
+Modern Streamlit-based web interface featuring:
+- Chat-style conversation with AI agents
+- Multi-provider AI configuration
+- Real-time task execution and monitoring
+- Secure API key management
 
-### `advanced_browser_use.py`
-Advanced examples showcasing:
-- Custom browser profiles and settings
-- Multiple LLM providers (OpenAI, Anthropic)
-- Multi-tab browser automation
-- Parallel agent execution
-- Browser session reuse
+### `flexible_browser_use.py`
+Core automation engine with:
+- Support for OpenAI, Anthropic, Google, OpenRouter
+- Dynamic provider and model selection
+- Environment-based configuration
+- Interactive and automated modes
 
-### `.env.example`
-Template for environment variables including:
-- API keys for various LLM providers
-- Browser-use configuration options
-- Debug and telemetry settings
+### `run_ui.py`
+Simple launcher script for the web interface
 
 ## 🔧 Configuration Options
 
@@ -263,4 +274,4 @@ browser_profile = BrowserProfile(highlight_elements=True)
 
 ## 📝 License
 
-This setup is based on the browser-use framework. See the [original repository](https://github.com/browser-use/browser-use) for license information. 
+This setup is based on the browser-use framework. See the [original repository](https://github.com/browser-use/browser-use) for license information.
